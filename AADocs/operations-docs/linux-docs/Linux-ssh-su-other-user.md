@@ -1,0 +1,1 @@
+ssh root@172.18.18.106 'su -c "source /etc/profile;cd  /opt/hzgc/bigdata/Elastic/elastic;ls;whoami" esuser'

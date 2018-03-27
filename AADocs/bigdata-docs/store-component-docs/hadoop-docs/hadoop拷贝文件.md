@@ -1,0 +1,1 @@
+hadoop fs -cp /user/hadoop/file1  /user/hadoop/file2

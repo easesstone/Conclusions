@@ -1,0 +1,1 @@
+deleteall 'tablename','rowkey'

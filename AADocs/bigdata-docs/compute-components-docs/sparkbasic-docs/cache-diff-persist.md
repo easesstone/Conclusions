@@ -1,0 +1,3 @@
+cache这个方法也是个Tranformation,当第一次遇到Action算子的时才会进行持久化.
+其中cache内部调用了persist方法,persist方法又调用了persist(StorageLevel.MEMORY_ONLY)方法,  
+所以执行cache算子其实就是执行了persist算子且持久化级别为MEMORY_ONLY

@@ -1,0 +1,3 @@
+```shell
+yum remove java
+```

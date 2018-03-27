@@ -1,0 +1,1 @@
+YARN_NODEMANAGER_RESOURCE_CPU_VCORES=$(echo `echo "scale=1;$CORES*0.8"|bc`  | awk -F "." '{print $1}')
