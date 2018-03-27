@@ -1,7 +1,5 @@
-package com.sydney.dream
-
-import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.sql.SQLContext
+import org.apache.spark.{SparkConf, SparkContext}
 
 object ParquestSparkSqlDemo {
     def main(args: Array[String]): Unit = {

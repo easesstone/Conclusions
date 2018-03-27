@@ -14,11 +14,11 @@
         <module>ScalaDemo</module>
         <module>Impala</module>
         <module>Hive</module>-->
-        <module>Phoenix</module>
-       <!-- <module>Hbase</module>
-        <module>Kafka</module>
+        <!--<module>Phoenix</module>
+        <module>Hbase</module>
+        <module>Kafka</module>-->
         <module>SparkSql</module>
-        <module>SparkStreaming</module>
+        <!--<module>SparkStreaming</module>
         <module>Drill</module>
         <module>SparkJDBCThriftServer</module>-->
         <module>JavaBasic</module>

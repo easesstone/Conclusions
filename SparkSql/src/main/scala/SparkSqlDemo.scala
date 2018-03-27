@@ -1,7 +1,5 @@
-package com.sydney.dream
-
-import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.sql.{SQLContext, SparkSession}
+import org.apache.spark.{SparkConf, SparkContext}
 
 object SparkSqlDemo {
     case class Person(name: String, age: Long)
