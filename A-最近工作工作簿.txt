@@ -12,3 +12,5 @@
    1，es 数据导出（需要写工具类）
    2，es 数据导入
 4，ftp 数据迁移，（不用迁移）
+
+https://blog.csdn.net/duan_zhihua/article/details/52556793
