@@ -59,13 +59,13 @@ use whitoud doubt
 8，类具有单一职责功能  
 
 
-#使用技巧
+# 使用技巧
 #### 1，[使用技巧-Java编程问题解决流程](AADocs/skill-docs/skill-howtosolvejavaprogrammingbug.md)
 #### 2, [概要设计merge模块需求分析和概要设计](AADocs/skill-docs/skill-Outlinedesign.md)
 #### 3, [使用技巧-elastic导出导入数据](AADocs/skill-docs/skill-elastic-data-import-and-export.md)
 #### 4, [sql 使用小技巧](AADocs/skill-docs/skil-mysql-use.md)
 
-#Sql 
+# Sql 
 #### [sql 连接的使用](AADocs/skill-docs/skill-mysql-relations.md)
 
 
