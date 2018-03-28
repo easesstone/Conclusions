@@ -5,9 +5,9 @@ public class IgniteCRUDDemo {
         long start = System.currentTimeMillis();
         String jdbcUrl = "jdbc:ignite:thin://172.18.18.105/";
         Connection conn = getIgniteConnection(jdbcUrl);
-//        createTabelDemo(conn);
-//        createDataForCityTable(conn);
-//        createDataForPersonTable(conn);
+        createTabelDemo(conn);
+        createDataForCityTable(conn);
+        createDataForPersonTable(conn);
         getTableData(conn);
         try {
             conn.close();

@@ -47,6 +47,7 @@ use whitoud doubt
 # 集群部署安装
 #### 1，[Spark Stanalone HA 模式搭建](AADocs/bigdata-docs/compute-components-docs/sparkbasic-docs/standalone.md)
 
+
 # 规范代码
 1，接口定义，对外接口，对内接口，对外提供统一的接口    
 2，方法实现：提取公共实现代码、即工具类，松耦合，单一功能  
@@ -56,5 +57,15 @@ use whitoud doubt
 6，避免过于沉重的操作，比如一次性操作很大的数据量，采取分而治之的方法  
 7, 項目間的類關係圖，以及項目各個模塊實現的功能，需要大致地進行描述，方便維護和交接  
 8，类具有单一职责功能  
+
+
+#使用技巧
+#### 1，[使用技巧-Java编程问题解决流程](AADocs/skill-docs/skill-howtosolvejavaprogrammingbug.md)
+#### 2, [概要设计merge模块需求分析和概要设计](AADocs/skill-docs/skill-Outlinedesign.md)
+#### 3, [使用技巧-elastic导出导入数据](AADocs/skill-docs/skill-elastic-data-import-and-export.md)
+#### 4, [sql 使用小技巧](AADocs/skill-docs/skil-mysql-use.md)
+
+#Sql 
+#### [sql 连接的使用](AADocs/skill-docs/skill-mysql-relations.md)
 
 
