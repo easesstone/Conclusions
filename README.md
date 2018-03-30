@@ -1,3 +1,9 @@
+# 基本信息
+
+|<a href="">李第亮</a>|<a href="">2年大数据开发经验</a>|<a href="">Email: eaesstone@qq.com</a>|<a href="">WeChat: u_n_n_unique</a>|
+|:----:|:------:|:-----:|:-----:|
+
+
 # 标签
 
 | <a href="">Conclustions</a> | <a href="">使用技巧</a> | <a href="">大数据组件</a> | <a href="">语言学习</a> | <a href="">小情趣小确幸</a> | <a href="">最是留恋处</a> 
@@ -7,6 +13,14 @@
 | <a href="">In 2018</a> | <a href="">Linux</a> | <a href="">spark</a>|<a href="">java</a> | <a href="">你猜我猜不猜</a> | 十里相徘徊 |  
 | <a href="">Conclustions</a> | <a href="">使用技巧</a> | 大数据组件 | 语言学习 | 小情趣小确幸 | 最是留恋处 |  
 | <a href="">In 2018</a> | <a href="">Linux</a> | spark|java | 你猜我猜不猜 | 桃花笑春风 | 
+
+
+# 我的优势
+1，熟练掌握java，有持续集成经验，熟悉代码质量控制。  
+2，熟练使用shell 脚本编写自动化流程,开发过大数据集群架构自动化部署脚本。  
+3，熟练掌握HBase 数据库，Elasticsearch搜索，有实际项目应用经验。  
+4，对spark thriftserver 进行过调优，熟悉spark 开发。  
+5，熟练使用phoenix，可以编写phoenix Hive自定义函数。  
 
 
 # Conclusion in 2018 
