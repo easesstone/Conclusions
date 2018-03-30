@@ -1,7 +1,7 @@
 # 标签
-|<a href="">Conclustions</a>|<a href="">使用技巧</a> | <a href="">大数据组件</a> | <a href="">语言学习</a> | <a href="">小情趣小确幸小兴趣</a> | <a href="">最是留恋处，一往而深</a> |  
+| <a href="">Conclustions</a> | <a href="">使用技巧</a> | <a href="">大数据组件</a> | <a href="">语言学习</a> | <a href="">小情趣小确幸</a> | <a href="">最是留恋处，一往而深矣</a> |  
 |:------------:|:----------:|:---------:|:----------:|:----------:|:----------:|  
-|<a href="">In 2018</a>|<a href="">Linux</a>| <a href="">spark</a>|<a href="">java</a>|<a href="">你猜你猜你猜我猜不猜</a>|<a href="">桃花笑春风，十里相徘徊</a> |  
+| <a href="">In 2018</a> | <a href="">Linux</a> | <a href="">spark</a>|<a href="">java</a> | <a href="">你猜你猜你猜我猜不猜</a> | 桃花笑春风，十里相徘徊 |  
 
 
 # Conclusion in 2018 
