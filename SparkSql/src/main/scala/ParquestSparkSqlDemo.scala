@@ -14,8 +14,5 @@ object ParquestSparkSqlDemo {
 
         val df3 = (sqlContext.read.option("mergeSchema", "true")).parquet("data/test_table")
         df3.printSchema()
-
-
-
     }
 }
