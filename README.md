@@ -1,13 +1,12 @@
 # 基本信息
 
-|<a href="">李第亮</a>|<a href="">2年大数据开发经验</a>|<a href="">Email: eaesstone@qq.com</a>|<a href="">WeChat: u_n_n_unique</a>|
-|:----:|:------:|:-----:|:-----:|
-
+|<a href="">李第亮</a>|<a href="">2年大数据开发经验</a>|<a href="">Email: eaesstone@qq.com</a>|<a href="">WeChat: u_n_n_unique</a>|  
+|:----:|:------:|:-----:|:-----:|  
 
 # 标签
 
-| <a href="">Conclustions</a> | <a href="">使用技巧</a> | <a href="">大数据组件</a> | <a href="">语言学习</a> | <a href="">小情趣小确幸</a> | <a href="">最是留恋处</a> 
- |:------------:|:----------:|:---------:|:----------:|:----------:|:----------:|
+| <a href="">Conclustions</a> | <a href="">使用技巧</a> | <a href="">大数据组件</a> | <a href="">语言学习</a> | <a href="">小情趣小确幸</a> | <a href="">最是留恋处</a>  
+|:------------:|:----------:|:---------:|:----------:|:----------:|:----------:|
 | <a href="">In 2018</a> | <a href="">Linux</a> | <a href="">spark</a>|<a href="">java</a> | <a href="">你猜我猜不猜</a> | 一往而深矣 |  
 | <a href="">Conclustions</a> | <a href="">使用技巧</a> | <a href="">大数据组件</a> | <a href="">语言学习</a> | <a href="">小情趣小确幸</a> | 桃花笑春风 |  
 | <a href="">In 2018</a> | <a href="">Linux</a> | <a href="">spark</a>|<a href="">java</a> | <a href="">你猜我猜不猜</a> | 十里相徘徊 |  
