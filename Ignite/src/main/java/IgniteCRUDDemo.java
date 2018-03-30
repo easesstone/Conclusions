@@ -8,7 +8,11 @@ public class IgniteCRUDDemo {
 //        createTabelDemo(conn);
 //        createDataForCityTable(conn);
 //        createDataForPersonTable(conn);
-        getTableData(conn);
+        getTableDataV1(conn);
+//        getTableData(conn);
+//        System.out.println("==========================");
+//        getTabelDataV2(conn);
+//        getTabelDataV3(conn);
         try {
             conn.close();
         } catch (SQLException e) {
@@ -16,6 +20,61 @@ public class IgniteCRUDDemo {
         }
     }
 
+    // 右连接
+    public static void getTabelDataV3(Connection connection) {
+        Statement stmt = null;
+        try {
+            stmt = connection.createStatement();
+            ResultSet rs = stmt.executeQuery("select p.*, c.* from Person p right join City c on p.city_id = c.id");
+            while (rs.next())
+                System.out.println(rs.getString(1) + ", " + rs.getString(2)
+                        + ", " + rs.getString(3) + ", " + rs.getString(4) + "," + rs.getString(5));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                stmt.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    // 左连接
+    public static void getTabelDataV2(Connection connection) {
+        Statement stmt = null;
+        try {
+            stmt = connection.createStatement();
+            ResultSet rs = stmt.executeQuery("select p.*, c.* from Person p left join City c on p.city_id = c.id");
+            while (rs.next())
+                System.out.println(rs.getString(1) + ", " + rs.getString(2)
+                        + ", " + rs.getString(3) + ", " + rs.getString(4) + "," + rs.getString(5));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                stmt.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    // 内连接
+    public static void getTableDataV1(Connection conn) {
+        Statement stmt = null;
+        try {
+            stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT p.*, c.* FROM Person p inner join City c on p.city_id = c.id");
+            while (rs.next())
+                System.out.println(rs.getString(1) + ", " + rs.getString(2));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    // 和内连接情况相同
     public static void getTableData(Connection conn) {
         Statement stmt = null;
         try {
@@ -35,22 +94,28 @@ public class IgniteCRUDDemo {
         try{
             PreparedStatement stmt =
                     conn.prepareStatement("INSERT INTO Person (id, name, city_id) VALUES (?, ?, ?)");
-            stmt.setLong(1, 1L);
-            stmt.setString(2, "John Doe");
-            stmt.setLong(3, 3L);
-            stmt.executeUpdate();
-            stmt.setLong(1, 2L);
-            stmt.setString(2, "Jane Roe");
-            stmt.setLong(3, 2L);
-            stmt.executeUpdate();
-            stmt.setLong(1, 3L);
-            stmt.setString(2, "Mary Major");
-            stmt.setLong(3, 1L);
-            stmt.executeUpdate();
-            stmt.setLong(1, 4L);
-            stmt.setString(2, "Richard Miles");
-            stmt.setLong(3, 2L);
-            stmt.executeUpdate();
+//            stmt.setLong(1, 1L);
+//            stmt.setString(2, "John Doe");
+//            stmt.setLong(3, 3L);
+//            stmt.executeUpdate();
+//            stmt.setLong(1, 2L);
+//            stmt.setString(2, "Jane Roe");
+//            stmt.setLong(3, 2L);
+//            stmt.executeUpdate();
+//            stmt.setLong(1, 3L);
+//            stmt.setString(2, "Mary Major");
+//            stmt.setLong(3, 1L);
+//            stmt.executeUpdate();
+//            stmt.setLong(1, 4L);
+//            stmt.setString(2, "Richard Miles");
+//            stmt.setLong(3, 2L);
+//            stmt.executeUpdate();
+
+            PreparedStatement stmtV2 =
+                    conn.prepareStatement("INSERT INTO Person (id, name) VALUES (?, ?)");
+            stmtV2.setLong(1, 5L);
+            stmtV2.setString(2, "Richard Miles");
+            stmtV2.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -59,14 +124,17 @@ public class IgniteCRUDDemo {
     public static void createDataForCityTable(Connection conn) {
         try {
             PreparedStatement stmt = conn.prepareStatement("INSERT INTO City (id, name) VALUES (?, ?)");
-            stmt.setLong(1, 1L);
-            stmt.setString(2, "Forest Hill");
-            stmt.executeUpdate();
-            stmt.setLong(1, 2L);
-            stmt.setString(2, "Denver");
-            stmt.executeUpdate();
-            stmt.setLong(1, 3L);
-            stmt.setString(2, "St. Petersburg");
+//            stmt.setLong(1, 1L);
+//            stmt.setString(2, "Forest Hill");
+//            stmt.executeUpdate();
+//            stmt.setLong(1, 2L);
+//            stmt.setString(2, "Denver");
+//            stmt.executeUpdate();
+//            stmt.setLong(1, 3L);
+//            stmt.setString(2, "St. Petersburg");
+//            stmt.executeUpdate();
+            stmt.setLong(1, 4L);
+            stmt.setString(2, "HangZhou");
             stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
