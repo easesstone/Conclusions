@@ -1,6 +1,6 @@
 # 基本信息
 
-|<a href="">李第亮</a>|<a href="">2年大数据开发经验</a>|<a href="">Email: eaesstone@qq.com</a>|<a href="">WeChat: u_n_n_unique</a>|  
+|李第亮|2年大数据开发经验|Email: eaesstone@qq.com|WeChat: u_n_n_unique|  
 |:----:|:------:|:-----:|:-----:|  
 
 # 标签
