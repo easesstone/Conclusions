@@ -1,13 +1,5 @@
 ## Hive
-### hive 查看表格：
-```
-describe tableName
-hive 添加分区
-set hive.exec.dynamic.partition=true;
-set hive.exec.dynamic.partition.mode=nonstrict;
 
-alter table tableName add partition(date='datevale',ipcid='ipcidVlue');
-```
 
 ### hive 数据迁移,从一张表格向另一张表格进行插入数据
 ```

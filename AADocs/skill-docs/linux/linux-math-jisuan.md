@@ -1,3 +1,4 @@
+```
 #!/bin/bash
 ################################################################################
 ## Copyright:   HZGOSUN Tech. Co, BigData
@@ -55,3 +56,4 @@ echo "$(date "+%Y-%m-%d %H:%M:%S ") bulk data to the es.........................
 for file in $(ls $JSON_SPILIT_PATH);do
     curl 172.18.18.100:9200/_bulk?pretty --data-binary @${JSON_SPILIT_PATH}/${file}
 done
+```

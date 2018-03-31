@@ -16,11 +16,11 @@
 
 
 # 知识点
-0, [es 基本知识点](Elasticsearch-basic.md)
+0, [es 基本知识点](Elasticsearch-basic.md)  
 1, [java api 的使用](javaapi.md)  
 2，[集群启动](ES-start.md)  
-3, [聚合相关知识点](es-juhe-chaxun.md)
-4, []
+3, [聚合相关知识点](es-juhe-chaxun.md)  
+4, [elastic spark 把数据索引到es 中](apache-spark-insert-data-into-es.md)  
 
 
 

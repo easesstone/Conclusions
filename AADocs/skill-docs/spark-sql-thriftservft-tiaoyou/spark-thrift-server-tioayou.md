@@ -1,3 +1,4 @@
+```
 #!/bin/bash
 ################################################################################
 ## Copyright:   HZGOSUN Tech. Co, BigData
@@ -160,3 +161,4 @@ $SPARK_HOME/sbin/start-thriftserver.sh --master yarn --driver-memory $DRIVER_MEM
   --conf spark.default.parallelism=1000 \
   --conf spark.storage.memoryFraction=0.5 \
   --conf spark.shuffle.memoryFraction=0.3 \
+```

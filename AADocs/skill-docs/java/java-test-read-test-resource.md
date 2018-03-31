@@ -1,0 +1,1 @@
+## maven  test 中，用到的resources 文件是test 下面的resource 文件。。。。，尽管具体的类在main目录下。
