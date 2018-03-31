@@ -1,4 +1,3 @@
-```shell 
 curl -XPUT 'http://ldl:9200/objectinfo?pretty' -d '{
     "settings" : {
         "analysis" : {
