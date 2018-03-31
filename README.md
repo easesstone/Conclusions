@@ -47,7 +47,7 @@
 1, 接口的输入结果和输出结果，封装成对象进行处理  
 2, 不分多条件和单条件查询，统一拼装成SQL 语句拼接的形式     
 
-# [脚本规范，参见模板](AADocs/skill-docs/linux/linux-jiaoben-guifan.sh)
+# [脚本规范，参见模板](AADocs/skill-docs/linux/linux-jiaoben-guifan.md)
 
 # maven 工程规范
 1，项目的配置文件统一  
