@@ -12,8 +12,8 @@
 
 | <a href="">Conclustions</a> | <a href="">使用技巧</a> | <a href="">大数据组件</a> | <a href="">语言学习</a> | <a href="">小情趣小确幸</a> | <a href="">最是留恋处</a>  
 |:------------:|:----------:|:---------:|:----------:|:----------:|:----------:|
-| <a href="">In 2018</a> | <a href="">Linux</a> | <a href="">spark</a>|<a href="">java</a> | <a href="">你猜我猜不猜</a> | 一往而深矣 |  
-| <a href="">Conclustions</a> | <a href="">使用技巧</a> | <a href="">大数据组件</a> | <a href="">语言学习</a> | <a href="">小情趣小确幸</a> | 桃花笑春风 |  
+| [In 2018](AADocs/conclusions-docs/In2018.md) | <a href="">Linux</a> | <a href="">spark</a>|<a href="">java</a> | <a href="">你猜我猜不猜</a> | 一往而深矣 |  
+| <a href="">In 2017</a> | <a href="">使用技巧</a> | <a href="">大数据组件</a> | <a href="">语言学习</a> | <a href="">小情趣小确幸</a> | 桃花笑春风 |  
 | <a href="">In 2018</a> | <a href="">Linux</a> | <a href="">spark</a>|<a href="">java</a> | <a href="">你猜我猜不猜</a> | 十里相徘徊 |  
 | <a href="">Conclustions</a> | <a href="">使用技巧</a> | 大数据组件 | 语言学习 | 小情趣小确幸 | 最是留恋处 |  
 | <a href="">In 2018</a> | <a href="">Linux</a> | spark|java | 你猜我猜不猜 | 桃花笑春风 | 
@@ -25,41 +25,6 @@
 4，对spark thriftserver 进行过调优，熟悉spark 开发。  
 5，熟练使用phoenix，可以编写phoenix Hive自定义函数。  
 
-
-# Conclusion in 2018 
-分佈式搜索，多線程客戶端搜索，1000萬的10秒內的實時搜索,集群分布式，多小集群模式  
-集群扩容（多客户端扩容）
- 
-# Conclusion in 2017
-## 工作
-1，从零开始参与大数据项目架构，提供源码管理，编译，项目发布支撑，方便组员间的相互协作开发，提高项目管理的效率。  
-2，主持大数据开源集群搭建脚本规范和自动化部署安装，给大数据服务提供基础组件服务，自动化流程，减少项目部署时间。  
-3，参与其中多个大数据服务模块的设计，代码编写，不断提高静态信息库以图搜图效率。  
-4，参与大数据各个组件调研，不断优化大集群的项目架构，在elasticsearch、hbase、shell脚本、自动化管理工具方面涉略较深，支撑现阶段的整个大数据服务架构。  
-5，处理承担组内脚本编写，代码测试，项目发布遇到的问题，给出合理的不断优化的解决方案。  
-6，负责对新入组成员的shell脚本，项目架构，大数据组件，构建和项目管理工具的使用培训，提升整个团队的技能。  
-7，多个版本迭代过程中，不断地进行优化代码设计和项目架构，目前整个大数据服务，个人负责的模块性能稳定，效率不断得到提升。  
-(备注: 大数据开发工程师，面试题)
-（研读代码，总结整个项目架构，）  
-use whitoud doubt  
-8，前期代码没有设计好，几乎所有的时间都花费在调试和Bug 修复上
-## 收获
-1，Spark（Simple）  
-2，Elastic(More than Middle)  
-3，Linux(Upper)   
-4，Hive(Less Than Simple)  
-5，Hadoop（More Than Simple）  
-6，Drill（More Than Simple）  
-7，phoenix（More Than Simple）  
-8，Hbase（Middle）  
-9, Flume （Simple）  
-10，Java（Middle）  
-11，Kafka(Simple)   
-12，RockMq(Less Than Simple)  
-13，Docker（Nothing）  
-14，Jenkins(Upper)  
-15，Azkaban  
-16, OpenStack and CEPH 
 
 
 # Conclusion in 2016
