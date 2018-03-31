@@ -12,9 +12,9 @@
 # 基本信息  
 
 ---------------------------------------------------------------------  
-|李第亮|2年大数据开发经验|Email: eaesstone@qq.com|WeChat: u_n_n_unique|  
+|Name|experience|Email|WeChat|  
 |:----:|:------:|:-----:|:-----:|  
-|contect| welcome!!!| | |  
+|Steve.Diliang.Li|2Years|unnunique@139.com |u_n_n_unique |  
 ---------------------------------------------------------------------  
 
 # 我的优势
