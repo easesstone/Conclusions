@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 public class IgniteComputeV1 {
+    // example-default 中的ip需要是本机的ip
     public static void main(String[] args) {
         try (Ignite ignite = Ignition.start("example-ignnite.xml")) {
             Collection<IgniteCallable<Integer>> calls = new ArrayList<>();

@@ -11,30 +11,30 @@ import javax.cache.Cache;
 
 public class IgniteComputeV2 {
     public static void main(String[] args) {
-//        Ignite ignite = Ignition.start("example-ignnite.xml");
-//        ignite.compute().affinityRun("SQL_PUBLIC_CITY", cityId, new IgniteRunnable() {
-//            @IgniteInstanceResource
-//            Ignite ignite;
-//            @Override
-//            public void run() {
-//                // Getting an access to Persons cache.
-//                IgniteCache<BinaryObject, BinaryObject> people = ignite.cache(
-//                        "Person").withKeepBinary();
-//                ScanQuery<BinaryObject, BinaryObject> query =
-//                        new ScanQuery <BinaryObject, BinaryObject>();
-//                try (QueryCursor<Cache.Entry<BinaryObject, BinaryObject>> cursor =
-//                             people.query(query)) {
-//                    // Iteration over the local cluster node data using the scan query.
-//                    for (Cache.Entry<BinaryObject, BinaryObject> entry : cursor) {
-//                        BinaryObject personKey = entry.getKey();
-//                        // Picking Denver residents only only.
-//                        if (personKey.<Long>field("CITY_ID") == cityId) {
-//                            person = entry.getValue();
-//                            // Sending the warning message to the person.
-//                        }
-//                    }
-//                }
-//            }
-//        }
+        Ignite ignite = Ignition.start("example-ignnite.xml");
+        ignite.compute().affinityRun("SQL_PUBLIC_CITY", 1, new IgniteRunnable() {
+            @IgniteInstanceResource
+            Ignite ignite;
+            @Override
+            public void run() {
+                // Getting an access to Persons cache.
+                IgniteCache<BinaryObject, BinaryObject> people = ignite.cache(
+                        "Person").withKeepBinary();
+                ScanQuery<BinaryObject, BinaryObject> query =
+                        new ScanQuery <BinaryObject, BinaryObject>();
+                try (QueryCursor<Cache.Entry<BinaryObject, BinaryObject>> cursor =
+                             people.query(query)) {
+                    // Iteration over the local cluster node data using the scan query.
+                    for (Cache.Entry<BinaryObject, BinaryObject> entry : cursor) {
+                        BinaryObject personKey = entry.getKey();
+                        // Picking Denver residents only only.
+                        if (personKey.<Long>field("CITY_ID") == 1) {
+                            System.out.println(entry.getValue());
+                            // Sending the warning message to the person.
+                        }
+                    }
+                }
+            }
+        });
     }
 }
