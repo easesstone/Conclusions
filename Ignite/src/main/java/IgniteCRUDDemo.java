@@ -5,6 +5,12 @@ import java.io.IOException;
 import java.sql.*;
 import java.util.UUID;
 
+
+/**
+ * iginte 要点.md
+ * 首先把基础知识点中的内容弄清楚
+ * https://www.zybuluo.com/liyuj/note/963460#138%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%9C%8D%E5%8A%A1%E7%BD%91%E6%A0%BC%E5%BA%94%E7%94%A8
+ */
 public class IgniteCRUDDemo {
     public static void main(String[] args) throws IOException {
         long start = System.currentTimeMillis();
