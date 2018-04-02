@@ -1,3 +1,37 @@
+# 使用技巧
+1,  [drill读取spark保存的parquet文件中timestamp不正确](drill-read-spark-parquet-timestamp-error.md)  
+
+
+# 知识点 
+## 1，中文翻译文档下载
+[drill 中文文档](drill.docx)
+
+## 2， 安装
+```
+安装前提：
+(Required) Running Oracle JDK version 7 or version 8 if running Drill 1.6 or later.
+(Required) Running a ZooKeeper quorum
+(Recommended) Running a Hadoop cluster
+(Recommended) Using DNS
+
+在每个节点。下载，解压，配置 drill-overrive.conf
+drill.exec:{
+  cluster-id: "<mydrillcluster>",
+  zk.connect: "<zkhostname1>:<port>,<zkhostname2>:<port>,<zkhostname3>:<port>"
+}
+
+
+在每个节点启动Drillbit
+${DRILL_HOME}/bin/drillbit.sh start
+
+Web 控制台
+http://<IP address or host name>:8047
+
+```
+
+
+# 创建错误
+## 谨慎之前安装过drill 的节点
 ```
 s102 节点安装失败，之前配置过单节点的配置：
 rm -rf  /tmp/drill

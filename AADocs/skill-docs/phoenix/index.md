@@ -1,4 +1,27 @@
-# Phnenix 学习
+# 使用技巧
+建立函数  
+create function FACECOMP(varchar,varchar) returns decimal as 'com.hzgc.phoenix.FaceCompFunc' 
+using jar 'hdfs://172.18.18.135:9000/phoenix/jars/phoenix_function-1.0.jar';
+
+创建表格  
+create table "objectinfo"("id" char(25) not null primary key, "person"."name" varchar, "person"."platformid" varchar, "person"."tag" varchar, 
+ "person"."pkey" varchar, "person"."idcard" varchar, "person"."sex" integer, "person"."photo" varchar, "person"."feature" varchar, 
+ "person"."reason" varchar, "person"."creator" varchar, "person"."cphone" varchar, "person"."createtime" date, "person"."updatetime" date);  
+ 
+select "id",facecomp("feature",'') as "test" from "objectinfo"  where "feature" is not null order by "test" DESC limit 10;  
+
+create view "objectinfo"("id" char(25) not null primary key, "person"."name" varchar, "person"."platformid" varchar, "person"."tag" varchar,
+ "person"."pkey" varchar, "person"."idcard" varchar, "person"."sex" integer, "person"."photo" varchar, "person"."feature" varchar, 
+ "person"."reason" varchar, "person"."creator" varchar, "person"."cphone" varchar, "person"."createtime" date, "person"."updatetime" date);  
+
+创建函数
+create function FACECOMPV1(float[], varchar) returns FLOAT  as 'com.hzgc.phoenix.FaceCompFuncV1' using jar 
+'hdfs://hzgc/user/phoenix/udf/funcv1/phoenix-1.0.0.jar';
+
+## 可以使用pySQL 进行脚本式操作phoenix
+
+
+# 知识点
 ## 简介
 1，HBase 适合横向扩展，数据量大，根据rowkey进行查询。不适合一些细致的查询。  
 2，Phonenix 根据HBase 的API，封装成了类似SQL 的查询。  
@@ -188,7 +211,166 @@ using jar 'hdfs:/localhost:8080/hbase/lib/myjar.jar'
 
 ```
 
+### Phoenix 视图和表的区别
+```
+phoenix操作hbase，我们有两种方式，创建表，创建视图。
+
+这两种方式，有区别。
+
+创建表的话，可读可写，就可以对HBase进行插入，查询，删除操作。
+
+视图的话，是只读的，一般就只可以进行查询操作
+
+虽然看起来，表的功能，比视图更强大一些。但是就像是mysql等关系型数据库一样，删除表操作，
+会将表删掉。但是删除视图操作，却不会影响原始表的结构。
+
+因为使用phoenix，创建表后，会自动和hbase建立关联映射。
+当你使用phoenix删除和hbase之间的关系时，就会将hbase中的表也删掉了
+
+所以用视图，会对原始的HBase表影响小一些。
+
+```
 
 
 
+
+
+# 常见报错
+### 使用自定义函数的时候需要进行添加的选项
+
+```
+phoenix 下bin 目录需要把hbase-site.xml 拷贝上,同时Hbase-site.xml 配置文件需要添加如下内容。
+
+Error: ERROR 6003 (42F03): User defined functions are configured to not be allowed. 
+To allow configure phoenix.functions.allowUserDefinedFunctions to true. (state=42F03,code=6003)
+java.sql.SQLException: ERROR 6003 (42F03): User defined functions are configured to not be allowed.
+ To allow configure phoenix.functions.allowUserDefinedFunctions to true.
+	at org.apache.phoenix.exception.SQLExceptionCode$Factory$1.newException(SQLExceptionCode.java:483)
+	at org.apache.phoenix.exception.SQLExceptionInfo.buildException(SQLExceptionInfo.java:150)
+	at org.apache.phoenix.jdbc.PhoenixStatement.
+	throwIfUnallowedUserDefinedFunctions(PhoenixStatement.java:1990)
+	at org.apache.phoenix.jdbc.PhoenixStatement.access$800(PhoenixStatement.java:206)
+	at org.apache.phoenix.jdbc.PhoenixStatement$
+	ExecutableCreateFunctionStatement.compilePlan(PhoenixStatement.java:789)
+	at org.apache.phoenix.jdbc.PhoenixStatement$ExecutableCreateFunctionStatement.
+	compilePlan(PhoenixStatement.java:779)
+	at org.apache.phoenix.jdbc.PhoenixStatement$2.call(PhoenixStatement.java:386)
+	at org.apache.phoenix.jdbc.PhoenixStatement$2.call(PhoenixStatement.java:376)
+	at org.apache.phoenix.call.CallRunner.run(CallRunner.java:53)
+	at org.apache.phoenix.jdbc.PhoenixStatement.executeMutation(PhoenixStatement.java:374)
+	at org.apache.phoenix.jdbc.PhoenixStatement.executeMutation(PhoenixStatement.java:363)
+	at org.apache.phoenix.jdbc.PhoenixStatement.execute(PhoenixStatement.java:1707)
+	at sqlline.Commands.execute(Commands.java:822)
+	at sqlline.Commands.sql(Commands.java:732)
+	at sqlline.SqlLine.dispatch(SqlLine.java:813)
+	at sqlline.SqlLine.begin(SqlLine.java:686)
+	at sqlline.SqlLine.start(SqlLine.java:398)
+	at sqlline.SqlLine.main(SqlLine.java:291)
+0: jdbc:phoenix:172.18.18.135> exit
+
+org.apache.phoenix.schema.FunctionNotFoundException: ERROR 6001 (42F01): Function undefined. functionName=[FACECOMP]
+	at org.apache.phoenix.jdbc.PhoenixStatement.throwIfUnallowedUserDefinedFunctions(PhoenixStatement.java:2024)
+	at org.apache.phoenix.jdbc.PhoenixStatement.access$800(PhoenixStatement.java:207)
+	at org.apache.phoenix.jdbc.PhoenixStatement$ExecutableSelectStatement.compilePlan(PhoenixStatement.java:465)
+	at org.apache.phoenix.jdbc.PhoenixStatement$ExecutableSelectStatement.compilePlan(PhoenixStatement.java:442)
+	at org.apache.phoenix.jdbc.PhoenixStatement$1.call(PhoenixStatement.java:300)
+	at org.apache.phoenix.jdbc.PhoenixStatement$1.call(PhoenixStatement.java:290)
+	at org.apache.phoenix.call.CallRunner.run(CallRunner.java:53)
+	at org.apache.phoenix.jdbc.PhoenixStatement.executeQuery(PhoenixStatement.java:289)
+	at org.apache.phoenix.jdbc.PhoenixStatement.executeQuery(PhoenixStatement.java:283)
+	at org.apache.phoenix.jdbc.PhoenixPreparedStatement.executeQuery(PhoenixPreparedStatement.java:186)
+	at com.hzgc.service.staticrepo.Demo.main(Demo.java:49)
+
+
+<!-- 新增的配置 -->
+<property>
+    <name>phoenix.functions.allowUserDefinedFunctions</name>
+    <value>true</value>
+</property>
+<property>
+    <name>fs.hdfs.impl</name>
+    <value>org.apache.hadoop.hdfs.DistributedFileSystem</value>
+</property>
+<property>
+    <name>hbase.dynamic.jars.dir</name>
+    <value>${hbase.rootdir}/lib</value>
+    <description>
+        The directory from which the custom udf jars can be loaded
+        dynamically by the phoenix client/region server without the need to restart. However,
+        an already loaded udf class would not be un-loaded. See
+        HBASE-1936 for more details.
+    </description>
+</property>
+```
+### 有关Phoenix 查询大量数据的时候超时的时候的Hbase-site.xml 的相关设置。
+```
+WARN client.ScannerCallable: Ignore, probably already closed
+java.io.IOException: Call to s103/172.18.18.103:16020 failed on
+ local exception: org.apache.hadoop.hbase.ipc.CallTimeoutException: Call id=466, 
+ waitTime=60001, operationTimeout=60000 expired.
+	at org.apache.hadoop.hbase.ipc.AbstractRpcClient.wrapException(AbstractRpcClient.java:292)
+	at org.apache.hadoop.hbase.ipc.RpcClientImpl.call(RpcClientImpl.java:1274)
+	at org.apache.hadoop.hbase.ipc.AbstractRpcClient.callBlockingMethod(AbstractRpcClient.java:227)
+	at org.apache.hadoop.hbase.ipc.AbstractRpcClient$BlockingRpcChannelImplementation.callBlockingMethod(AbstractRpcClient.java:336)
+	at org.apache.hadoop.hbase.protobuf.generated.ClientProtos$ClientService$BlockingStub.scan(ClientProtos.java:35396)
+	at org.apache.hadoop.hbase.client.ScannerCallable.close(ScannerCallable.java:387)
+	at org.apache.hadoop.hbase.client.ScannerCallable.call(ScannerCallable.java:207)
+	at org.apache.hadoop.hbase.client.ScannerCallableWithReplicas.call(ScannerCallableWithReplicas.java:145)
+	at org.apache.hadoop.hbase.client.ScannerCallableWithReplicas.call(ScannerCallableWithReplicas.java:60)
+	at org.apache.hadoop.hbase.client.RpcRetryingCaller.callWithoutRetries(RpcRetryingCaller.java:212)
+	at org.apache.hadoop.hbase.client.ClientScanner.call(ClientScanner.java:314)
+	at org.apache.hadoop.hbase.client.ClientScanner.closeScanner(ClientScanner.java:241)
+	at org.apache.hadoop.hbase.client.ClientScanner.nextScanner(ClientScanner.java:256)
+	at org.apache.hadoop.hbase.client.ClientScanner.loadCache(ClientScanner.java:586)
+	at org.apache.hadoop.hbase.client.ClientScanner.next(ClientScanner.java:358)
+	at org.apache.phoenix.iterate.ScanningResultIterator.next(ScanningResultIterator.java:118)
+	at org.apache.phoenix.iterate.TableResultIterator.next(TableResultIterator.java:166)
+	at org.apache.phoenix.iterate.LookAheadResultIterator$1.advance(LookAheadResultIterator.java:47)
+	at org.apache.phoenix.iterate.LookAheadResultIterator.init(LookAheadResultIterator.java:59)
+	at org.apache.phoenix.iterate.LookAheadResultIterator.peek(LookAheadResultIterator.java:73)
+	at org.apache.phoenix.iterate.ParallelIterators$1.call(ParallelIterators.java:128)
+	at org.apache.phoenix.iterate.ParallelIterators$1.call(ParallelIterators.java:113)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.phoenix.job.JobManager$InstrumentedJobFutureTask.run(JobManager.java:183)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.hadoop.hbase.ipc.CallTimeoutException: Call id=466, waitTime=60001, 
+operationTimeout=60000 expired.
+	at org.apache.hadoop.hbase.ipc.Call.checkAndSetTimeout(Call.java:73)
+	at org.apache.hadoop.hbase.ipc.RpcClientImpl.call(RpcClientImpl.java:1248)
+	... 25 more
+
+在Hbase 开源服务的安装包中加入如下配置：
+    <property>
+        <name>mapreduce.task.timeout</name>
+        <value>1200000</value>
+    </property>
+    <property>
+        <name>hbase.client.scanner.timeout.period</name>
+        <value>600000</value>
+    </property>
+    <property>
+        <name>hbase.rpc.timeout</name>
+        <value>600000</value>
+    </property>
+    
+    <property>
+       <name>hbase.client.operation.timeout</name>
+      <value>600000</value>
+    </property>
+    <property>
+       <name>hbase.regionserver.lease.period</name>
+      <value>600000</value>
+    </property>
+    <property>
+        <name>phoenix.query.timeoutMs</name>
+        <value>600000</value>
+    </property>
+    <property>
+        <name>phoenix.query.keepAliveMs</name>
+        <value>600000</value>
+    </property>
+
+```
 
