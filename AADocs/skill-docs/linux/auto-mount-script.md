@@ -29,8 +29,6 @@ function mountTheDisk()
 
     lvcreate -l ${SizeOfDisk} -n lv1 vg1
     checkResult  "lvcreate -l  sizeofdisk -n lv1 vg1"
-
-    mkfs.ext3 -j /dev/vg1/lv1
     checkResult  "mkfs.ext3 -j /dev/vg1/lv1"
 
     tune2fs -c 0 -i 0 /dev/vg1/lv1

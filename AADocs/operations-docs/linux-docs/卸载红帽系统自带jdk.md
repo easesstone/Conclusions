@@ -1,3 +1,0 @@
-```shell
-yum remove java
-```

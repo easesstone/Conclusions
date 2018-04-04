@@ -44,5 +44,4 @@ Modify file /etc/profile, add “export PATH=/usr/gcc-4.4.7/bin/:$PATH”
 source /etc/profile
 check version with command “gcc -v/g++ -v”
 
-
 ```

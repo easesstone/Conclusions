@@ -1,9 +1,9 @@
 # 使用技巧
-建立函数  
+1, 建立函数  
 create function FACECOMP(varchar,varchar) returns decimal as 'com.hzgc.phoenix.FaceCompFunc' 
 using jar 'hdfs://172.18.18.135:9000/phoenix/jars/phoenix_function-1.0.jar';
 
-创建表格  
+2, 创建表格  
 create table "objectinfo"("id" char(25) not null primary key, "person"."name" varchar, "person"."platformid" varchar, "person"."tag" varchar, 
  "person"."pkey" varchar, "person"."idcard" varchar, "person"."sex" integer, "person"."photo" varchar, "person"."feature" varchar, 
  "person"."reason" varchar, "person"."creator" varchar, "person"."cphone" varchar, "person"."createtime" date, "person"."updatetime" date);  
@@ -14,9 +14,11 @@ create view "objectinfo"("id" char(25) not null primary key, "person"."name" var
  "person"."pkey" varchar, "person"."idcard" varchar, "person"."sex" integer, "person"."photo" varchar, "person"."feature" varchar, 
  "person"."reason" varchar, "person"."creator" varchar, "person"."cphone" varchar, "person"."createtime" date, "person"."updatetime" date);  
 
-创建函数
+3, 创建函数
 create function FACECOMPV1(float[], varchar) returns FLOAT  as 'com.hzgc.phoenix.FaceCompFuncV1' using jar 
 'hdfs://hzgc/user/phoenix/udf/funcv1/phoenix-1.0.0.jar';
+## [实际项目运用技巧参考](phoenix-skill-for-project.md)
+
 
 ## 可以使用pySQL 进行脚本式操作phoenix
 

@@ -14,9 +14,9 @@
 |:------------:|:----------:|:---------:|:----------:|:----------:|:----------:|
 | [In 2018](AADocs/conclusions-docs/In2018.md) | [Linux](AADocs/skill-docs/linux/index.md) | [spark-thriftserver](AADocs/skill-docs/spark-sql-thriftservft-tiaoyou/index.md)|[scala](AADocs/skill-docs/scala/index.md) | 你猜我猜不猜 | 一往而深矣 |  
 | [In 2017](AADocs/conclusions-docs/In2017.md) | [Jenkins](AADocs/skill-docs/jenkins/index.md) | [elasticsearch](AADocs/skill-docs/elasticsearch/index.md) | [phoenix](AADocs/skill-docs/phoenix/index.md) |小情趣小确幸 | 桃花笑春风 |  
-| [In 2016](AADocs/conclusions-docs/In2016.md) | [Java](AADocs/skill-docs/java/index.md) | [hive](AADocs/skill-docs/hbase/index.md)| some how | 你猜我猜不猜 | 十里相徘徊 |  
+| [In 2016](AADocs/conclusions-docs/In2016.md) | [Java](AADocs/skill-docs/java/index.md) | [hive](AADocs/skill-docs/hive/index.md)| [window](AADocs/skill-docs/windows/index.md) | 你猜我猜不猜 | 十里相徘徊 |  
 | ToBeContinue | [sql使用技巧](AADocs/skill-docs/sql/index.md) | [hbase](AADocs/skill-docs/hbase/index.md) | [drill](AADocs/skill-docs/drill/index.md) | 小情趣小确幸 | 最是留恋处 |  
-| ToBeContinue | [tool-use](AADocs/skill-docs/tool-use/index.md) | [资源下载](AADocs/skill-docs/download/index.md)| Demo | 你猜我猜不猜 | 桃花笑春风 | 
+| ToBeContinue | [tool-use](AADocs/skill-docs/tool-use/index.md) | [资源下载](AADocs/skill-docs/download/index.md)| [docker](AADocs/skill-docs/docker/index.md) | 你猜我猜不猜 | 桃花笑春风 | 
 
 # 我的优势
 1，熟练掌握java，有持续集成经验，熟悉代码质量控制。  
@@ -66,6 +66,43 @@ Modification_Person:
 Review_Person:
 
 
+# 项目维护
+1，需求文档  
+2，概要分析和详细设计文档      
+3，数据流向文档，流程图  
+4，代码设计文档UML类图    
+5，编码规范，代码注释，代码文档  
+6，测试用例文档，自动化测试用例      
+7，产品文档   
+8，迭代开发，敏捷开发模型  
+
+## Vim 技巧
+### 复制剪切粘贴
+复制粘贴  
+在Esc 模式下，在所处光标的一行，连续按两次y  
+即yy  
+然后移动到某一行，按p  
+则会在光标后的一行里进行插入复制的一行   
+复制多行n+yy  
+剪切的命令则是  
+dd或者n+dd  
+
+### vim 显示缩进等设置。
+编辑用户目录下的.vimrc  
+set tabstop=4   tab默认空格数  
+set softtabstop=4  
+set shiftwidth=4   
+set noexpandtab   
+set nu 展示行号   
+set autoindent  自动缩进  
+set cindent  针对c语言的自动缩进  
+
+
+### 搜索字符
+/或者？  加要找的字符。  
+快速回到行首或者行尾  home end
+快速回到首行或尾行shift+g gg
+
 
 # 常用快捷键
 ## Windows
@@ -80,8 +117,3 @@ alt + 左右，回到上一次的光标所在的地方
 ctr + d 删除  
 alt + 上下，移动一行的位置，或者一段代码块的位置  
 ctr + tab 在各个文件间切换  
-
-
-
-
-

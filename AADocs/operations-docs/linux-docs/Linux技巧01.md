@@ -4,9 +4,6 @@
     -B  ：  前面N行，
     eg: 遍历当前目录下所有文件中含有“namenode”字符创该行的后面2行  grep namenode ./ -R -A 
 
-### 2） jar -tf ***jar |grep -i text
-    eg: 在jar中查找text文本内容
-
 ### 3） find -name hadoop-common*jar -exec ls -l {} \;
     查出所有的文件并展示详细列表，-exec 参数为任何执行命令，"{}"表示前面过滤的数据，以“；”结尾，但是需要转移，则为"\;"
 

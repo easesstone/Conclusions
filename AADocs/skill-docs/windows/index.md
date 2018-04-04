@@ -1,3 +1,7 @@
+# 技巧
+1, 删除服务  
+sc delete  服务名  
+2, 磁盘挂载  
 ···
 1,搜索：Computer Manage 
 2,打开Computer Manage

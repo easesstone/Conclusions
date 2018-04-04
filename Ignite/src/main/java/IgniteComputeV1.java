@@ -1,4 +1,6 @@
+import cluster.Person;
 import org.apache.ignite.Ignite;
+import org.apache.ignite.IgniteCache;
 import org.apache.ignite.IgniteCluster;
 import org.apache.ignite.Ignition;
 import org.apache.ignite.configuration.IgniteConfiguration;
@@ -57,6 +59,10 @@ public class IgniteComputeV1 {
 
         // Start Ignite in client mode.
         Ignite ignite = Ignition.start(cfg);
+
+        try (IgniteCache<Long, Person> cache = ignite.cache("personCache")) {
+
+        }
 
 //        Ignition.setClientMode(true);
 //        // Start Ignite in client mode.

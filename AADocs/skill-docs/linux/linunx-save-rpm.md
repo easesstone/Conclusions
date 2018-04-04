@@ -43,14 +43,4 @@ $ sudo yumdownloader <package-name>
 
 yumdownloader lsof --resolve --destdir=/data/mydepot/　　#resolve下载依赖
 
-
-
-
-
-
-
-
-
-
-
 ```
