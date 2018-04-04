@@ -1,10 +1,16 @@
 package com.sydney.dream.crontab_and_thread;
 
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 /**
  * Created by lenovo on 2018/2/1.
  */
 public class Tool {
     public static void runTask() {
+        Map<String, String> demo = new HashMap();
         int i = 1;
         while (true) {
             try {
