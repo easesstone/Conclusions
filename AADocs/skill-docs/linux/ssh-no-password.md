@@ -1,3 +1,4 @@
+```
 #!/bin/bash
 ################################################################################
 ## Copyright:   HZGOSUN Tech. Co, BigData
@@ -137,3 +138,4 @@ config_no_password(){
 #deliver_authorizedkesy_to_other_nodes
 
 config_no_password
+```

@@ -15,8 +15,8 @@
 | [In 2018](AADocs/conclusions-docs/In2018.md) | [Linux](AADocs/skill-docs/linux/index.md) | [spark-thriftserver](AADocs/skill-docs/spark-sql-thriftservft-tiaoyou/index.md)|[scala](AADocs/skill-docs/scala/index.md) | 你猜我猜不猜 | 一往而深矣 |  
 | [In 2017](AADocs/conclusions-docs/In2017.md) | [Jenkins](AADocs/skill-docs/jenkins/index.md) | [elasticsearch](AADocs/skill-docs/elasticsearch/index.md) | [phoenix](AADocs/skill-docs/phoenix/index.md) |小情趣小确幸 | 桃花笑春风 |  
 | [In 2016](AADocs/conclusions-docs/In2016.md) | [Java](AADocs/skill-docs/java/index.md) | [hive](AADocs/skill-docs/hive/index.md)| [window](AADocs/skill-docs/windows/index.md) | 你猜我猜不猜 | 十里相徘徊 |  
-| ToBeContinue | [sql使用技巧](AADocs/skill-docs/sql/index.md) | [hbase](AADocs/skill-docs/hbase/index.md) | [drill](AADocs/skill-docs/drill/index.md) | 小情趣小确幸 | 最是留恋处 |  
-| ToBeContinue | [tool-use](AADocs/skill-docs/tool-use/index.md) | [资源下载](AADocs/skill-docs/download/index.md)| [docker](AADocs/skill-docs/docker/index.md) | 你猜我猜不猜 | 桃花笑春风 | 
+| ToBeContinue | [sql使用技巧](AADocs/skill-docs/sql/index.md) | [hbase](AADocs/skill-docs/hbase/index.md) | [drill](AADocs/skill-docs/drill/index.md) | 小情趣小确幸 | [git](AADocs/skill-docs/git/index.md) |  
+| ToBeContinue | [tool-use](AADocs/skill-docs/tool-use/index.md) | [资源下载](AADocs/skill-docs/download/index.md)| [docker](AADocs/skill-docs/docker/index.md) | 你猜我猜不猜 | [ant](AADocs/skill-docs/ant/index.md) | 
 
 # 我的优势
 1，熟练掌握java，有持续集成经验，熟悉代码质量控制。  

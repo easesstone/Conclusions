@@ -1,4 +1,4 @@
-```XML
+```
 Linux 用户的分类：
 1，root 用户。
 2，虚拟用户。（如email，bin，ftp，games,ntp，sshd 等。）

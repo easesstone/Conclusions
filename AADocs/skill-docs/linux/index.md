@@ -1,5 +1,12 @@
 # 使用技巧
--16,sed 添加一行，
+-23,[用户密码过期解决办法](linux-user-password-outdate.md)  
+-22,解压jar包：unzip zk-helper-1.0.jar  -d hello  
+-21,[网络设置工具ifconfig](ifconfig.md)  
+-20,[Linux 用户操作监听脚本](linux-jianting-user-caozuo.md)  
+-19,[Linux 自启动设置](Linux-start-app-when-reboot.md)  
+-18,对比文件，找出不同的行：cat suite_[1-9].txt suite_[1-9][0-9].txt  | sort | uniq -d（相同行uniq -u）  
+-17,[服务器权限管理](linux-quanxian.md)  
+-16,sed 添加一行,sed -i '4 s/^/good baby\n/' test.txt,在第四行添加一行，其余数据往后移动    
 -15,[Linux 并发执行技巧](Linux-bingfa-zhi-xing.md)  
 -14,[字符串截取](Linux-sub-zifuchuan.md)  
 -13,Linux 传参技巧
@@ -24,7 +31,7 @@ $? 是显示最后命令的退出状态，0表示没有错误，其他表示有�
 -4, [svn commit](linux-svn-commit.md)  
 -3, [Linux 服务器间网速测试](iperflinux.md)  
 -2, [source-sh-exec各种执行shell脚本方法区别以及PID获取](source-sh-exec-diff-getppid.md)  
--1, [linux 服务器之间免密码登录设置](ssh-no-password.sh)  
+-1, [linux 服务器之间免密码登录设置](ssh-no-password.md)  
 0,  [Linux 常用bash 设置](linux-bashrs.md)  
 1,  [xshell 打开Linux图形界面](shell-xshell.md)  
 2,  [cpu 型号，物理个数，物理核数，逻辑核数](Linux-cpu-info-demo.md)  
@@ -70,6 +77,63 @@ $? 是显示最后命令的退出状态，0表示没有错误，其他表示有�
 42, [linux 网络ip 小时解决办法](service-machine-operation.md)  
 43, jar 中查找text 文本：jar -tf ***jar |grep -i text  
 44, [Linux 时区设置](Linux-timeZone.md)  
-45, [解决ssh的"Write failed: Broken pipe"问题](SSH-BROKEN-PINELINE.md)
+45, [解决ssh的"Write failed: Broken pipe"问题](SSH-BROKEN-PINELINE.md)  
+46, [Linux 可以打开的最大文件数](linux-open-max-file.md)  
+47, [rsync命令](rsync.md)  
+48, [Linux 磁盘扩容](Linux-ci-pan-kuo-rong.md)  
+48, [RedHat 修改默认jdk](Linux-xiugai-moren-jdk.md)  
+49, 覆盖默认GCC：export $PATH=gcc/home/***:$PATH   
+50, shell 以root用户登录,然后切换到其他用户进行执行脚本，ssh root@172.18.18.106 'su -c "source /etc/profile;cd  /opt/hzgc/bigdata/Elastic/elastic;ls;whoami" esuser'  
+51, [Linux 资源分配 ulimit](Linux-ulimit.md)  
+52, [ssh 第一次登录到其他节点的时候，不用数据yes设置](Login-With-No-Yes.md)  
+53, 删除当前所有目录：ls -F | grep  '/$' |xargs rm -rf 或者 ls -d */ | xargs rm -rf  
+54, 删除当前目录所有文件： ls -F | grep -v '/$' | xargs rm -rf  或者 find . -type f | xargs rm -rf   
+55，[linux 卸载磁盘报错常见解决办法](LinuxUmount-field.md)  
+56, [4791 -- process information unavailable](processInfomationUnavailable.md)  
+57, [Linux 磁盘自动分区](Linux-cipan-cidong-fenqu.md)  
+58, [RedHat关闭防火墙](Rehad-close-FireWord.md)  
+59, 查看当前文件的个数： find /export2/BigData/datanode/dn1 -type f | wc -l  
+60, 检查系统关闭或者重启的时间：方法一（用于reboot的场景）： who -b 方法二（用于shutdown的场景）： last -x|grep shutdown  
+62, sed 删除包含abc 的一行sed -e '/abc/d'  a.txt  > a.log  
+63, 内存释放：sync;echo 3 > /proc/sys/vm/drop_caches  
+64, 集群间时区同步;ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime;hwclock -w  
+65, hdfs 重定向日记 hdfs dfs -ls / >/dev/null 2> test.log&  
+66, 在控制台打印hadoop 日记：  export HADOOP_CLIENT_OPTS=-Dhadoop.root.logger=DEBUG,console  
+67, hdfs执行命令开启debug，在hadoop-env.sh中加上以下参数：export HADOOP_ROOT_LOGGER=DEBUG,RFA  
+68, -exec 用法：find -name hadoop-common*jar -exec ls -l {} \;查出所有的文件并展示详细列表，-exec 参数为任何执行命令，"{}"表示前面过滤的数据，以“；”结尾，但是需要转移，则为"\;"  
+69, grep string_search path -R -A line_num -B line_num 查找path 下带有string_search 内容，以及前面几行和后面几行。  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
