@@ -8,6 +8,9 @@
     <artifactId>conclusion</artifactId>
     <packaging>pom</packaging>
     <version>1.0.0</version>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
     <modules>
         <!--<module>SparkCore</module>
         <module>ElasitcSpark</module>
@@ -17,7 +20,7 @@
         <!--<module>Phoenix</module>
         <module>Hbase</module>
         <module>Kafka</module>-->
-        <module>SparkSql</module>
+        <!--<module>SparkSql</module>-->
         <!--<module>SparkStreaming</module>
         <module>Drill</module>
         <module>SparkJDBCThriftServer</module>-->
@@ -32,7 +35,4 @@
         <module>DropCashes</module>
     </modules>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
 </project>

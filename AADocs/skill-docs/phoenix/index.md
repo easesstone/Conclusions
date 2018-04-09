@@ -17,6 +17,16 @@ create view "objectinfo"("id" char(25) not null primary key, "person"."name" var
 3, 创建函数
 create function FACECOMPV1(float[], varchar) returns FLOAT  as 'com.hzgc.phoenix.FaceCompFuncV1' using jar 
 'hdfs://hzgc/user/phoenix/udf/funcv1/phoenix-1.0.0.jar';
+
+4，从一张表格向另一张表格插入数据：   
+upsert into OBJECTINFODVV1 select * from OBJECTINFO;
+
+5，批量跟新数据：  
+批量更新
+upsert into objectinfo(id,platformid) select id,'0001' from objectinfo where platformid = '0041';
+ 
+
+
 ## [实际项目运用技巧参考](phoenix-skill-for-project.md)
 
 

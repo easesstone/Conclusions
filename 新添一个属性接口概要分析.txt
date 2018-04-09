@@ -1,0 +1,105 @@
+添加一个属性和三个接口：
+
+一个属性是：人员所在位置：location(字符串)
+更新表格和新建表格：
+表格更新：alter table  OBJECTINFODEMOV1 add  person.location varchar;
+新建表格的时候：
+create table objectinfodemov1(
+      id char(32) not null primary key,
+      person.name varchar,
+      person.platformid varchar,
+      person.tag varchar,
+      person.pkey varchar,
+      person.idcard varchar,
+      person.sex integer,
+      person.photo varbinary,
+      person.feature float[],
+      person.reason varchar,
+      person.creator varchar,
+      person.cphone varchar,
+      person.createtime TIMESTAMP,
+      person.updatetime TIMESTAMP,
+      person.important integer,
+      person.status integer,
+	  person.location varchar);
+
+
+
+	  
+添加对象的时候： 可以不用修改。
+
+
+
+1，各个对象类型下，人员所在位置的人数情况。   入参【List Pkey】                         出参:  Map<String, Int>  , String 代表的的是pkey   
+select pkey,location,count(location) as count from objectinfodvv1 group by pkey,location;
++----------+-----------+--------+
+|   PKEY   | LOCATION  | COUNT  |
++----------+-----------+--------+
+| 0001001  | 0001      | 11     |
+| 0001001  | 0002      | 3      |
++----------+-----------+--------+
+
+
+
+2，更新人员所在位置，传入一批人员的List, 和位置所在Id？？？？？？？？,（ 一批List + id， 可能有多批。  （单个已经包含在内了。单个人员位置的修改，）） ，返回值，更新是否成功，0，成功，1，失败
+3，人员所在位置置空， 传入参数？？？ 某个对象类型下的所有人员，位置都置空 List<Pkey>                                                                    返回值，更新是否成功，0，成功， 1，失败
+4，查询的时候，需要按照位置进行查询。
+	
+三个接口的入参情况：
+是否可以统一成一个对象？？？？
+UpdateOpts
+List<String> pkeysCount;  // 各个对象类型下，人员所在位置的人数情况。
+List<String> pkeysReset;   // 需要重置的对象类型。
+Map<String, List<String>> pekys;  // 需要更新的人员的数据。
+
+
+接口类名字：
+PrisonService 
+
+1,方法名：
+coutByLocation(List<String> pkey)
+返回值：
+List<PrinCountResult>
+PrisonCountResult
+String pkey;
+Map<String, int> locationCounts;
+
+
+2,方法名：
+updateLocation(Map<String, List<String>> updateLocations)
+返回值0或者1
+
+3,方法名：
+resetLocation(List<String> pkeys)
+返回值0或者1
+
+	
+首先测试表修改： 南昌环境升级？？？    
+然后新建表格的时候，添加一个字段测试:
+
+4，查询的时候，需要按照位置进行查询。
+返回结果封装，（POJO）
+PsearchModule  （搜索参数添加） 
+sql 封装修改。
+返回结果获取，
+
+
+首先：建表和更新表格已经处理好：
+接下来是三个接口的出参和入参情况：
+
+
+
+
+少了一个具体的功能功能流程图：
+
+概要设计。
+详细功能设计。
+功能流程图。
+接着，类设计。
+代码编写。
+代码自检。
+然后代码测试。
+上限测试。
+
+
+
