@@ -2,26 +2,21 @@ package com.sydney.dream
 
 import kafka.serializer.StringDecoder
 import org.apache.spark.SparkConf
-import org.apache.spark.streaming.{Seconds, StreamingContext}
+import org.apache.spark.streaming.{Durations, StreamingContext}
 import org.apache.spark.streaming.kafka.KafkaUtils
 
 object KafkaStreamSourceDemo {
     def main(args: Array[String]): Unit = {
-        val somethings =Array("192.168.59.128:9092", "first")
-        val Array(brokers, topics) = somethings
-        val sparkConf = new SparkCo
+        val conf = new SparkConf().setMaster("local[*]").setAppName("SparkStreamingOnKafkaDirect")
+        val ssc = new StreamingContext(conf, Durations.seconds(15))
+        ssc.checkpoint("/checkpoint")
+        val kafkaParams = Map(
+            "metadata.broker.list" -> "172.18.18.100:9092,172.18.18.101:9092,172.18.18.102:9092",
+            "group.id" -> "FaceObjectConsumerGroup"
+        )
 
+        val topicsSet = "feature".split(",").toSet
 
-        nf().setAppName("DirectKfkaWordCount").setMaster("local[*]")
-        val ssc = new StreamingContext(sparkConf, Seconds(2))
-        val topicsSet = topics.split(",").toSet
-        val kafkaParams = Map[String, String]("metadata.broker.list" -> brokers)
-//        val directKafkaStream = KafkaUtils.createDirectStream[
-//              [key class], [value class],
-//              [key decoder class],[value decoder class] ]
-//              (streamingContext,
-//              [map of Kafka parameters],
-//              [set of topics to consume])
         val messages = KafkaUtils.createDirectStream[String, String, StringDecoder, StringDecoder](ssc, kafkaParams, topicsSet)
         val lines = messages.map(_._2)
         lines.print()
