@@ -3,7 +3,7 @@ package com.sydney.dream
 import kafka.serializer.StringDecoder
 import org.apache.spark.SparkConf
 import org.apache.spark.streaming.{Durations, StreamingContext}
-import org.apache.spark.streaming.kafka.KafkaUtils
+import org.apache.spark.streaming.kafka.{HasOffsetRanges, KafkaUtils}
 
 //import kafka.serializer.StringDecoder
 //import org.apache.spark.streaming.kafka.KafkaUtils
@@ -28,6 +28,8 @@ object StreamingV1 {
         val messages = KafkaUtils.createDirectStream[String, String, StringDecoder, StringDecoder](ssc, kafkaParams, topicsSet)
         messages.foreachRDD(rdd => {
             rdd.foreach(row => {println("key: " + row._1 + ", "  + "value: " + row._2)})
+            val offsetRanges = rdd.asInstanceOf[HasOffsetRanges].offsetRanges
+            offsetRanges.foreach(offsetRange => println("=================================================" + offsetRange))
         })
         ssc.checkpoint("/checkpoint")
         ssc
