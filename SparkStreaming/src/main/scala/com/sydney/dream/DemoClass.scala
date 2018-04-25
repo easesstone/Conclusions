@@ -17,6 +17,7 @@ import scala.collection.mutable.ListBuffer
 /**
   * add partions for a topic
   * ./bin/kafka-topics.sh --zookeeper 172.18.18.100:2181  --alter --topic first  --partitions 8
+  * ./kafka-run-class.sh kafka.tools.GetOffsetShell --broker-list 172.18.18.100:9092 --topic first --time -1 zui xin xiao fei
   */
 object DemoClass {
     val LOG : Logger = Logger.getLogger(DemoClass.getClass)
