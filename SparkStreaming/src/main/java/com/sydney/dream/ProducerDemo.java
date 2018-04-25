@@ -47,6 +47,8 @@ public class ProducerDemo {
             //public Future<RecordMetadata> send(ProducerRecord<K,V> record,Callback callback)
             producer.send(new ProducerRecord<String, String>("first", "key: "
                     + Integer.toString(i), "value: " + Integer.toString(i) + " yes"));
+
+            System.out.println("key: " + i);
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {

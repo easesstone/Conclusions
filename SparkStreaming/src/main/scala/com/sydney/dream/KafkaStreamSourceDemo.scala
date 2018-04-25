@@ -1,9 +1,7 @@
 package com.sydney.dream
 
-import kafka.serializer.StringDecoder
 import org.apache.spark.SparkConf
 import org.apache.spark.streaming.{Durations, StreamingContext}
-import org.apache.spark.streaming.kafka.KafkaUtils
 
 object KafkaStreamSourceDemo {
     def main(args: Array[String]): Unit = {
@@ -17,9 +15,9 @@ object KafkaStreamSourceDemo {
 
         val topicsSet = "feature".split(",").toSet
 
-        val messages = KafkaUtils.createDirectStream[String, String, StringDecoder, StringDecoder](ssc, kafkaParams, topicsSet)
-        val lines = messages.map(_._2)
-        lines.print()
+//        val messages = KafkaUtils.createDirectStream[String, String, StringDecoder, StringDecoder](ssc, kafkaParams, topicsSet)
+//        val lines = messages.map(_._2)
+//        lines.print()
         ssc.start()
         ssc.awaitTermination()
     }

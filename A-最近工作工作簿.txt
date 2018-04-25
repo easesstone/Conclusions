@@ -20,7 +20,7 @@ https://blog.csdn.net/duan_zhihua/article/details/52556793
 
 
 
-
+Spark Streaming Kafka Offset guanli
 
 parquet 数据迁移方案：
 
