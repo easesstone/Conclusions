@@ -9,7 +9,8 @@
 8,  [maven 项目：test 的时候，读取的resource 是test中的，尽管代码在main 目录中](java-test-read-test-resource.md)  
 9,  [scala 的main 主要复制的时候，不要把main 方法复制进去，main 里面嵌套main]()  
 10, [java 常用io 的封装, BufferedReader BufferedWriter](BufferedReaderAndBufferedWriter.md)  
-11, [Json 工具的使用](jsonUtilToUse.md)  
+11, [Json 工具的使用](jsonUtilToUse.md)   
+12, [java 程序OOM 监控](oom-error-monitor.md)
 
 
 

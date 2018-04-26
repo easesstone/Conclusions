@@ -34,10 +34,15 @@ https://www.cnblogs.com/yinliang/p/6431677.html
 https://segmentfault.com/a/1190000011453225
 http://www.51testing.com/html/48/202848-242044.html
 https://www.cnblogs.com/guozhenqiang/p/5433202.html
+https://blog.csdn.net/u011080472/article/details/51322119
 
 VisualVM 使用。
 启动java 程序时加入如下参数：
 JAVA_OPTS="$JAVA_OPTS -Djava.rmi.server.hostname=172.18.18.100 -Dcom.sun.management.jmxremote.port=18999
 -Dcom.sun.management.jmxremote.ssl=false  -Dcom.sun.management.jmxremote.authenticate=false"
-
 然后用VisualVm 就可以进行远程连接
+
+MAT memory analysis tool(Dump 文件分析工具....)
+
+
+jconsole 查看性能
