@@ -1,4 +1,7 @@
 ```
+export PS1='[\u@\h \w]\$ '
+
+
 alias ...='cd ../..'
 alias ..='cd ..'
 alias vi='vim'

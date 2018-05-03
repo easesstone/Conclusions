@@ -4,7 +4,7 @@
 #
 
 # get the current directory
-#set -x
+set -x
 bin=`dirname "$0"`
 bin=`cd "$bin" > /dev/null; pwd`
 
