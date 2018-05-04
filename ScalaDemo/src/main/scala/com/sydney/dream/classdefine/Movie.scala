@@ -24,21 +24,37 @@ object Movie {
         println("排序后的数据：")
         for((k, v) <- sortedDistances) println(k, v)   
         // 返回分类标签
-        
-     
+        val lable = getClassLable(movies, sortedDistances, 3)
+        // 展示最终这个新电影属于哪个分类      
+        println
+        showLable(lable)
     }
+
+    def showLable(lable : Int) {
+        if (lable == 1) {
+            println("这个片子是动作片......")
+        } else {
+            println("这个片子是爱情片......")
+        }
+    }
+
     // 返回分类标签
-    def getClassLable(movies : Array[Movie], sortedDistances : Map[Int, Double], k : Int) : String = {
-        val tmp : Map[Int, Int] = Map()
-        for((k, v) <- sortedDistances) {
-            if (count >= k - 1) { 
+    def getClassLable(movies : Array[Movie], sortedDistances : Seq[(Int, Double)], k : Int) : Int = {
+        var tmp : Map[Int, Int] = Map()
+        var count = 0
+        for((key, v) <- sortedDistances) {
+            if (count >= k) { 
             } else {
-               tmp +=  (movies.get(k).typeMovie -> (tmp.getOrElse(movies.get(k).typeMovie, 0) + 1))   
+               tmp +=  (movies(key).typeMovie -> (tmp.getOrElse(movies(key).typeMovie, 0) + 1))   
             }
             count = count + 1
         }
-        
-        null        
+        //for((key, v) <- tmp) {println(key, v)} 
+        val seqTmp = tmp.toSeq.sortWith(_._2 > _._2)
+        println
+        println("最相邻的K个数据的分类统计...")
+        for((key, v) <- seqTmp) {println(key, v)}
+        seqTmp(0)._1
     }
     // 获取距离列表
     def getDistances(movie : Movie, movies : Array[Movie]) : Map[Int, Double] = {
